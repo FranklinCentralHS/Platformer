@@ -4,6 +4,7 @@ insert description here
 
 ## Team Members
 ### fchsLemke - Mr. Lemke
+### GMolter - Gavin Molter
 set up repo with readme, git config, and empty project files
 ### [Now add each collaborator the same way]
 * [and their contributions]
