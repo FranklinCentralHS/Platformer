@@ -1,12 +1,12 @@
 [gd_scene load_steps=15 format=3 uid="uid://ctjqncagdhkn5"]
 
 [ext_resource type="Script" path="res://scrips/game_manager.gd" id="1_bogdl"]
-[ext_resource type="PackedScene" uid="uid://dpllm1n40f7hx" path="res://scenes/player.tscn" id="1_uecsp"]
+[ext_resource type="PackedScene" uid="uid://dpllm1n40f7hx" path="res://scenes/player1.tscn" id="1_uecsp"]
 [ext_resource type="Texture2D" uid="uid://bhl561q484p0j" path="res://assets/sprites/world_tileset.png" id="1_xn1b5"]
 [ext_resource type="PackedScene" uid="uid://d4ayy7xmt2rbx" path="res://scenes/platform.tscn" id="3_me6bh"]
 [ext_resource type="PackedScene" uid="uid://dd8e2ef6dhom3" path="res://scenes/coin.tscn" id="4_lar1m"]
-[ext_resource type="PackedScene" uid="uid://bu8xxqv6664sa" path="res://scenes/killzone.tscn" id="5_lyui7"]
-[ext_resource type="PackedScene" uid="uid://csygc8clcxfht" path="res://scenes/slime_enemy.tscn" id="6_r3vi1"]
+[ext_resource type="PackedScene" path="res://scenes/killzone.tscn" id="5_lyui7"]
+[ext_resource type="PackedScene" path="res://scenes/slime_enemy.tscn" id="6_r3vi1"]
 [ext_resource type="FontFile" uid="uid://cr8ceqx561v6" path="res://assets/fonts/PixelOperator8.ttf" id="7_vjvxo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dvwu"]
