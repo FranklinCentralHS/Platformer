@@ -49,7 +49,7 @@ script = ExtResource("1_3ddgp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ylp88")
 autoplay = "default"
-frame_progress = 0.977713
+frame_progress = 0.58327
 flip_h = true
 
 [node name="killZone" parent="." instance=ExtResource("2_hytpc")]
