@@ -50,7 +50,6 @@ script = ExtResource("1_3ddgp")
 sprite_frames = SubResource("SpriteFrames_ylp88")
 autoplay = "default"
 frame_progress = 0.58327
-flip_h = true
 
 [node name="killZone" parent="." instance=ExtResource("2_hytpc")]
 
