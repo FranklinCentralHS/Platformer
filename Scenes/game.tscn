@@ -501,4 +501,4 @@ autoplay = "move"
 position = Vector2(214, 20)
 
 [node name="Tropical Slime2" parent="." instance=ExtResource("6_pjgsg")]
-position = Vector2(139, 50)
+position = Vector2(138, 52)
