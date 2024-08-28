@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ctjqncagdhkn5"]
+[gd_scene load_steps=17 format=3 uid="uid://ctjqncagdhkn5"]
 
 [ext_resource type="Script" path="res://scrips/game_manager.gd" id="1_bogdl"]
 [ext_resource type="PackedScene" uid="uid://dpllm1n40f7hx" path="res://scenes/player1.tscn" id="1_uecsp"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cxmixnmfihlnm" path="res://scenes/player2.tscn" id="5_xq3c0"]
 [ext_resource type="PackedScene" uid="uid://csygc8clcxfht" path="res://scenes/slime_enemy.tscn" id="6_r3vi1"]
 [ext_resource type="FontFile" uid="uid://cr8ceqx561v6" path="res://assets/fonts/PixelOperator8.ttf" id="7_vjvxo"]
+[ext_resource type="Script" path="res://scrips/Camera2D.gd" id="10_uyq15"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dvwu"]
 texture = ExtResource("1_xn1b5")
@@ -481,16 +482,12 @@ layer_0/tile_data = PackedInt32Array(-131075, 65536, 11, -65539, 65536, 11, -3, 
 layer_1/name = "Mid"
 layer_1/tile_data = PackedInt32Array(65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, -131069, 131072, 4, 65534, 0, 0, 65533, 0, 0, 5, 0, 0, 131069, 0, 1, 131070, 0, 1, 131071, 0, 1, 65536, 0, 1, 65537, 0, 1, 65538, 0, 1, 65539, 0, 1, 65540, 0, 1, 65541, 0, 1, 6, 393216, 0, 7, 393216, 0, 8, 393216, 0, 65542, 393216, 1, 65543, 393216, 1, 65544, 393216, 1, 9, 589824, 0, 10, 655360, 0, 11, 720896, 0, 12, 393216, 0, 13, 393216, 0, 65548, 393216, 1, 65549, 393216, 1, -65531, 196608, 7, -131067, 196608, 7, -196603, 196608, 7, -327675, 131072, 4, -2, 196608, 7, -65538, 196608, 7, -196610, 131072, 4, -1, 458752, 5, -196601, 0, 2)
 
-[node name="player" parent="." instance=ExtResource("1_uecsp")]
+[node name="player1" parent="." instance=ExtResource("1_uecsp")]
+unique_name_in_owner = true
 position = Vector2(12, -17)
 
-[node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(1, 2)
-zoom = Vector2(4, 4)
-limit_bottom = 120
-limit_smoothed = true
-
 [node name="player2" parent="." instance=ExtResource("5_xq3c0")]
+unique_name_in_owner = true
 position = Vector2(41, -17)
 
 [node name="Killzone" parent="." instance=ExtResource("5_lyui7")]
@@ -545,3 +542,10 @@ scale = Vector2(1.02823, 1.42928)
 theme_override_fonts/font = ExtResource("7_vjvxo")
 theme_override_font_sizes/font_size = 16
 text = "Space to Jump"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(13, -15)
+zoom = Vector2(4, 4)
+limit_bottom = 120
+limit_smoothed = true
+script = ExtResource("10_uyq15")
