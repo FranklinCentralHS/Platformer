@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://8418rlgh624u"]
+[gd_scene load_steps=21 format=3 uid="uid://8418rlgh624u"]
 
 [ext_resource type="Script" path="res://Scripts/coin.gd" id="1_6eho2"]
 [ext_resource type="Texture2D" uid="uid://cfoacjatkbmbs" path="res://Assets/sprites/coin.png" id="1_btf4k"]
+[ext_resource type="AudioStream" uid="uid://dyq8l3st4amkl" path="res://Assets/sounds/coin.wav" id="3_1lnwv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_js0x3"]
 atlas = ExtResource("1_btf4k")
@@ -98,6 +99,42 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_jgykf"]
 radius = 5.0
 
+[sub_resource type="Animation" id="Animation_ytuxf"]
+resource_name = "pickup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_s7q5l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5nf1e"]
+_data = {
+"RESET": SubResource("Animation_s7q5l"),
+"pickup": SubResource("Animation_ytuxf")
+}
+
 [node name="Coin" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_6eho2")
@@ -109,5 +146,13 @@ frame_progress = 0.941522
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jgykf")
+
+[node name="Picup Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_1lnwv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5nf1e")
+}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
