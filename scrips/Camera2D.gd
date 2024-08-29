@@ -13,12 +13,10 @@ var targets = []
 func add_target(t):
 	if not t in targets:
 		targets.append(t)
-		print(targets)
 		
 func remove_target(t):
 	if t in targets:
 		targets.erase(t)
-		print(targets)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -44,5 +42,4 @@ func _process(delta):
 	if r.size.x > r.size.y * screen_size.aspect():
 		z = clamp(r.size.x / screen_size.y,min_zoom,max_zoom)
 		zoom = lerp(zoom, Vector2.ONE * z, zoom_speed)
-		print(zoom)
 	pass

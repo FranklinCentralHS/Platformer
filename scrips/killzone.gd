@@ -5,8 +5,6 @@ extends Area2D
 @onready var player1 = %player1
 @onready var player2 = %player2
 
-func _ready():
-	print(player1)
 
 func _on_body_entered(body):
 	print("You died")
