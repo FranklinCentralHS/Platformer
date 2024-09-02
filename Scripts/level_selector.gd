@@ -24,6 +24,5 @@ func _on_level_4_button_pressed() -> void:
 
 func _on_back_button_pressed() -> void:
 	animation_player.play("RESET")
-	animation_player.play("LevelSelectorHide")
 
 	pass # Replace with function body.

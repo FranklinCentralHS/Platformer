@@ -1,7 +1,8 @@
 extends Button
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
-@onready var credits_bg: Sprite2D = $"../CreditsBg"
+@onready var info_bg: Sprite2D = $"../InfoBg"
 @onready var credits: Label = $"../Credits"
+@onready var back_button_credits: Button = $"../BackButtonCredits"
 
 func _on_mouse_entered() -> void:
 	#Scales button up when it's hovered over
@@ -13,7 +14,9 @@ func _on_mouse_exited() -> void:
 
 
 func _on_pressed() -> void:
-	animation_player.play("MenuHide")
-	credits_bg.visible=true
+	info_bg.visible=true
 	credits.visible=true
-	pass # Replace with function body.
+	back_button_credits.visible=true
+	back_button_credits.disabled=false
+	animation_player.play("MenuHide")
+#Runs the animation to hide the menu and shows the credits
