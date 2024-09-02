@@ -11,5 +11,9 @@ func _on_mouse_exited() -> void:
 
 
 func _on_pressed() -> void:
+	animation_player.play("MenuHide")
 	animation_player.play("LevelSelectorShow")
+	
+
+
 	pass # Replace with function body.
