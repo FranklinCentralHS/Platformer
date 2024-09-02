@@ -290,6 +290,3 @@ position = Vector2(138, 52)
 
 [node name="NextLevelFlag" parent="." instance=ExtResource("10_6mxc3")]
 position = Vector2(716, -85)
-
-[node name="NextLevelFlag2" parent="." instance=ExtResource("10_6mxc3")]
-position = Vector2(-20, 10)
