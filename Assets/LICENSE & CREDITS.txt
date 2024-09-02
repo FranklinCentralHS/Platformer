@@ -12,7 +12,6 @@ SPRITES by analogStudios_:
 knight (https://analogstudios.itch.io/camelot)
 slime (https://analogstudios.itch.io/dungeonsprites)
 platforms and coin (https://analogstudios.itch.io/four-seasons-platformer-sprites)
-Button wood (https://opengameart.org/content/worn-wood-texture)
 
 
 

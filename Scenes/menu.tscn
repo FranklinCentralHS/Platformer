@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://7rx0fdjkhp52"]
+[gd_scene load_steps=16 format=3 uid="uid://7rx0fdjkhp52"]
 
 [ext_resource type="Texture2D" uid="uid://njh47cs0c67w" path="res://Assets/sprites/world_tileset.png" id="1_fmdtr"]
 [ext_resource type="FontFile" uid="uid://byfklanqgqnjq" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="2_45ty1"]
 [ext_resource type="FontFile" uid="uid://cc3rn5io0q47q" path="res://Assets/fonts/PixelOperator8.ttf" id="3_wwafb"]
-[ext_resource type="Texture2D" uid="uid://ji3ine5mikvl" path="res://Assets/sprites/woodSignTexture.png" id="4_kqqxw"]
+[ext_resource type="Texture2D" uid="uid://cbnppt23t6vx" path="res://Assets/sprites/WoodButton.png.png" id="4_n3ook"]
 [ext_resource type="Script" path="res://Scripts/play_button.gd" id="5_kdd50"]
+[ext_resource type="Script" path="res://Scripts/help_button.gd" id="6_jeu7f"]
 [ext_resource type="Texture2D" uid="uid://bju0qqi8iqp4s" path="res://Assets/sprites/woodLevelBakcground.png" id="6_omju5"]
 [ext_resource type="Script" path="res://Scripts/level_selector.gd" id="6_syff1"]
 
@@ -479,6 +480,21 @@ tracks/13/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_e06l5"]
+resource_name = "Scale Up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
 [sub_resource type="Animation" id="Animation_56j88"]
 resource_name = "ScaleDown"
 length = 0.1
@@ -495,27 +511,12 @@ tracks/0/keys = {
 "values": [Vector2(1.1, 1.1), Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_e06l5"]
-resource_name = "Scale Up"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t8ves"]
 _data = {
 "LevelSelectorHide": SubResource("Animation_50q5i"),
 "LevelSelectorShow": SubResource("Animation_g0e68"),
-"ScaleDown": SubResource("Animation_56j88"),
-"ScaleUp": SubResource("Animation_e06l5")
+"ScaleDownPlay": SubResource("Animation_56j88"),
+"ScaleUpPlay": SubResource("Animation_e06l5")
 }
 
 [node name="Menu" type="Node2D"]
@@ -553,17 +554,47 @@ libraries = {
 [node name="PlayButton" type="Button" parent="mainMenuScreen"]
 offset_left = -164.0
 offset_top = -49.0
-offset_right = 164.0
-offset_bottom = 23.0
+offset_right = 172.0
+offset_bottom = 31.0
 scale = Vector2(1.1, 1.1)
 pivot_offset = Vector2(164, 36)
 theme_override_fonts/font = ExtResource("3_wwafb")
 theme_override_font_sizes/font_size = 24
 text = "PLAY"
-icon = ExtResource("4_kqqxw")
+icon = ExtResource("4_n3ook")
 flat = true
 icon_alignment = 1
 script = ExtResource("5_kdd50")
+
+[node name="HelpButton" type="Button" parent="mainMenuScreen"]
+offset_left = -164.0
+offset_top = 65.0
+offset_right = 172.0
+offset_bottom = 145.0
+scale = Vector2(1.1, 1.1)
+pivot_offset = Vector2(164, 36)
+theme_override_fonts/font = ExtResource("3_wwafb")
+theme_override_font_sizes/font_size = 24
+text = "HELP"
+icon = ExtResource("4_n3ook")
+flat = true
+icon_alignment = 1
+script = ExtResource("6_jeu7f")
+
+[node name="CreditsButton" type="Button" parent="mainMenuScreen"]
+offset_left = -164.0
+offset_top = 175.0
+offset_right = 172.0
+offset_bottom = 257.0
+scale = Vector2(1.1, 1.1)
+pivot_offset = Vector2(164, 36)
+theme_override_fonts/font = ExtResource("3_wwafb")
+theme_override_font_sizes/font_size = 24
+text = "Credits
+"
+icon = ExtResource("4_n3ook")
+flat = true
+icon_alignment = 1
 
 [node name="levelSelectorScreen" type="Node" parent="."]
 script = ExtResource("6_syff1")
@@ -649,6 +680,9 @@ flat = true
 [connection signal="mouse_entered" from="mainMenuScreen/PlayButton" to="mainMenuScreen/PlayButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="mainMenuScreen/PlayButton" to="mainMenuScreen/PlayButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="mainMenuScreen/PlayButton" to="mainMenuScreen/PlayButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="mainMenuScreen/HelpButton" to="mainMenuScreen/HelpButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="mainMenuScreen/HelpButton" to="mainMenuScreen/HelpButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="mainMenuScreen/HelpButton" to="mainMenuScreen/HelpButton" method="_on_pressed"]
 [connection signal="pressed" from="levelSelectorScreen/Level1Button" to="levelSelectorScreen" method="_on_level_1_button_pressed"]
 [connection signal="pressed" from="levelSelectorScreen/Level2Button" to="levelSelectorScreen" method="_on_level_2_button_pressed"]
 [connection signal="pressed" from="levelSelectorScreen/Level3Button" to="levelSelectorScreen" method="_on_level_3_button_pressed"]
