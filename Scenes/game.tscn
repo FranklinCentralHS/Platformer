@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://njh47cs0c67w" path="res://Assets/sprites/world_tileset.png" id="2_tbluy"]
 [ext_resource type="PackedScene" uid="uid://dkeq1o2bg4dld" path="res://Scenes/platform.tscn" id="3_g35tt"]
 [ext_resource type="PackedScene" uid="uid://8418rlgh624u" path="res://Scenes/coin.tscn" id="4_n6ghw"]
-[ext_resource type="PackedScene" path="res://Scenes/hud.tscn" id="5_0v3s1"]
+[ext_resource type="PackedScene" uid="uid://xa24crlpv41j" path="res://Scenes/hud.tscn" id="5_0v3s1"]
 [ext_resource type="PackedScene" uid="uid://dhmgjse1rh7kj" path="res://Scenes/kill_zone.tscn" id="5_yu2u2"]
 [ext_resource type="PackedScene" uid="uid://pkkdor1qk8x1" path="res://Scenes/tropical_slime.tscn" id="6_pjgsg"]
 
