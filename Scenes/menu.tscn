@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://7rx0fdjkhp52"]
+[gd_scene load_steps=15 format=3 uid="uid://7rx0fdjkhp52"]
 
 [ext_resource type="Texture2D" uid="uid://njh47cs0c67w" path="res://Assets/sprites/world_tileset.png" id="1_fmdtr"]
 [ext_resource type="FontFile" uid="uid://byfklanqgqnjq" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="2_45ty1"]
@@ -479,21 +479,6 @@ tracks/13/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_v0ma8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../levelSelectorScreen/Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="Animation" id="Animation_56j88"]
 resource_name = "ScaleDown"
 length = 0.1
@@ -529,7 +514,6 @@ tracks/0/keys = {
 _data = {
 "LevelSelectorHide": SubResource("Animation_50q5i"),
 "LevelSelectorShow": SubResource("Animation_g0e68"),
-"RESET": SubResource("Animation_v0ma8"),
 "ScaleDown": SubResource("Animation_56j88"),
 "ScaleUp": SubResource("Animation_e06l5")
 }
@@ -639,6 +623,7 @@ text = "4
 icon_alignment = 1
 
 [node name="Label" type="Label" parent="levelSelectorScreen"]
+visible = false
 offset_left = -226.0
 offset_top = -29.0
 offset_right = 226.0
