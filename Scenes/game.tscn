@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dku4xfpxhygx1"]
+[gd_scene load_steps=17 format=3 uid="uid://g1xsag7l4f1b"]
 
 [ext_resource type="PackedScene" uid="uid://bihiosntpc1l3" path="res://Scenes/player.tscn" id="1_10t5g"]
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_f57mx"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://xa24crlpv41j" path="res://Scenes/hud.tscn" id="5_0v3s1"]
 [ext_resource type="PackedScene" uid="uid://dhmgjse1rh7kj" path="res://Scenes/kill_zone.tscn" id="5_yu2u2"]
 [ext_resource type="PackedScene" uid="uid://pkkdor1qk8x1" path="res://Scenes/tropical_slime.tscn" id="6_pjgsg"]
+[ext_resource type="PackedScene" uid="uid://c67yj0msugwy6" path="res://Scenes/music.tscn" id="9_j4pxc"]
+[ext_resource type="PackedScene" uid="uid://djnswon5j706j" path="res://Scenes/next_level_flag.tscn" id="10_6mxc3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ljfjh"]
 texture = ExtResource("2_tbluy")
@@ -270,6 +272,8 @@ libraries = {
 }
 autoplay = "move"
 
+[node name="Music" parent="." instance=ExtResource("9_j4pxc")]
+
 [node name="Slimes" type="Node" parent="."]
 
 [node name="Tropical Slime" parent="Slimes" instance=ExtResource("6_pjgsg")]
@@ -278,4 +282,5 @@ position = Vector2(214, 20)
 [node name="Tropical Slime2" parent="Slimes" instance=ExtResource("6_pjgsg")]
 position = Vector2(138, 52)
 
-[node name="HUD" parent="." instance=ExtResource("5_0v3s1")]
+[node name="NextLevelFlag" parent="." instance=ExtResource("10_6mxc3")]
+position = Vector2(716, -85)

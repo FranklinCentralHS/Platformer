@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://djnswon5j706j"]
+
+[ext_resource type="Script" path="res://Scripts/next_level_flag.gd" id="1_wlobt"]
+[ext_resource type="Texture2D" uid="uid://b3v3fmqs6kbns" path="res://Assets/sprites/NextLevelFlag.png" id="2_w7027"]
+[ext_resource type="AudioStream" uid="uid://b8hjgjcf4mk7s" path="res://Assets/sounds/power_up.wav" id="3_lpv4i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0k3m7"]
+size = Vector2(8, 42)
+
+[node name="NextLevelFlag" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_wlobt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_w7027")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_lpv4i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 0)
+shape = SubResource("RectangleShape2D_0k3m7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
