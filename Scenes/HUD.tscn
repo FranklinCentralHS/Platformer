@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfue4bgfyn3wq"]
+
+[ext_resource type="Texture2D" uid="uid://084hhatphxge" path="res://assets/sprites/coinUI.png" id="1_tedbw"]
+[ext_resource type="FontFile" uid="uid://cmiykypbawxdc" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_prspj"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 72.0
+offset_bottom = 72.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("1_tedbw")
+
+[node name="Coins" type="Label" parent="."]
+offset_left = 36.0
+offset_top = -1.0
+offset_right = 137.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_prspj")
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
