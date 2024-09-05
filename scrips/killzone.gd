@@ -4,18 +4,19 @@ extends Area2D
 @onready var mult_target_cam = %MultTargetCam
 @onready var player1 = %player1
 @onready var player2 = %player2
-@onready var lives = 3
-@onready var livesLabel = %Lives
+@export var lives = 3
 
 
 func _on_body_entered(body):
 	print("You got damaged")
-	lives = lives-1
-	print(lives)
-	livesLabel.text = "Lives: "
-	if lives == 0:
+	playerVariables.lives = playerVariables.lives-1
+	print(playerVariables.lives)
+	
+	if body.position.y > -10:
+		playerVariables.lives = 0
+	if playerVariables.lives == 0:
 		print("You died")
-		print(lives)
+		print(playerVariables.lives)
 		Engine.time_scale = 0.5
 		body.get_node("CollisionShape2D").queue_free()	
 		timer.start()
@@ -24,5 +25,6 @@ func _on_body_entered(body):
 
 func _on_timer_timeout():
 	Engine.time_scale = 1
+	playerVariables.lives = 3
 	get_tree().reload_current_scene()
 	pass # Replace with function body.

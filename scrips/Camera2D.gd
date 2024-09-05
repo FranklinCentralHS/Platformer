@@ -6,9 +6,13 @@ extends Camera2D
 @export var max_zoom = 5
 @export var margin = Vector2(400,200)
 
+@onready var livesDisplay = $Lives
+
 var targets = []
 
 @onready var screen_size = get_viewport_rect().size
+
+
 
 func add_target(t):
 	if not t in targets:
@@ -42,4 +46,5 @@ func _process(delta):
 	if r.size.x > r.size.y * screen_size.aspect():
 		z = clamp(r.size.x / screen_size.y,min_zoom,max_zoom)
 		zoom = lerp(zoom, Vector2.ONE * z, zoom_speed)
+	livesDisplay.text = str(playerVariables.lives) 
 	pass
