@@ -25,3 +25,11 @@ func _process(delta):
 		
 
 	position.x+= direction*speed*delta
+
+
+func _on_slime_hurtbox_body_entered(body:Node2D):
+	print("i'm triggered")
+	print(body.get_class())
+	if body is Player:
+		queue_free()
+		print("DEATH")

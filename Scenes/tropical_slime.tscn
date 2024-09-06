@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://pkkdor1qk8x1"]
+[gd_scene load_steps=11 format=3 uid="uid://pkkdor1qk8x1"]
 
 [ext_resource type="Script" path="res://Scripts/tropical_slime.gd" id="1_3ddgp"]
 [ext_resource type="Texture2D" uid="uid://dfvjexgxn176l" path="res://Assets/sprites/slime_green.png" id="1_umj2w"]
@@ -43,6 +43,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ts8lc"]
 size = Vector2(10, 13)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjwkn"]
+size = Vector2(8, 2)
+
 [node name="Tropical Slime" type="Node2D"]
 script = ExtResource("1_3ddgp")
 
@@ -72,3 +75,12 @@ target_position = Vector2(0, 10)
 [node name="RayCastRightB" type="RayCast2D" parent="."]
 position = Vector2(10, 5)
 target_position = Vector2(0, 11)
+
+[node name="Slime_Hurtbox" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="The_Box" type="CollisionShape2D" parent="Slime_Hurtbox"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_rjwkn")
+
+[connection signal="body_entered" from="Slime_Hurtbox" to="." method="_on_slime_hurtbox_body_entered"]

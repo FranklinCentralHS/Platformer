@@ -8,6 +8,7 @@ func _on_body_entered(body:Node2D):
 		body.get_node("CollisionShape2D").queue_free()
 		Engine.time_scale =.5
 		timer.start()
+		pass
 
 
 func _on_timer_timeout():	
