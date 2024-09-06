@@ -3,8 +3,8 @@
 [ext_resource type="FontFile" uid="uid://cc3rn5io0q47q" path="res://Assets/fonts/PixelOperator8.ttf" id="1_yud3p"]
 [ext_resource type="Texture2D" uid="uid://cfoacjatkbmbs" path="res://Assets/sprites/coin.png" id="2_7qdrf"]
 
-[sub_resource type="Animation" id="Animation_hhe6s"]
-resource_name = "Vis_Start"
+[sub_resource type="Animation" id="Animation_cjd8r"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -18,8 +18,8 @@ tracks/0/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_cjd8r"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_hhe6s"]
+resource_name = "Vis_Start"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
