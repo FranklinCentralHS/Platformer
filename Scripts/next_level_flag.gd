@@ -24,5 +24,5 @@ func _on_timer_timeout() -> void:
 		get_tree().change_scene_to_file("res://Scenes/Level4.tscn")
 		pass
 	else:
-		print("Invalid Target Level")
+		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 	#Sends you to the target levle based on your set value
