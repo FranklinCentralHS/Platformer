@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://llxpoo5mbga1"]
+
+[ext_resource type="Texture2D" uid="uid://084hhatphxge" path="res://assets/sprites/coinUI.png" id="1_8sabq"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_hv44u"]
+[ext_resource type="FontFile" uid="uid://cmiykypbawxdc" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_5ptta"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hv44u")
+
+[node name="newLayer" type="CanvasLayer" parent="."]
+
+[node name="hudScore" type="Label" parent="newLayer"]
+offset_left = 36.0
+offset_top = 16.0
+offset_right = 108.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5ptta")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="newLayer"]
+offset_top = 9.0
+offset_right = 60.0
+offset_bottom = 72.0
+texture = ExtResource("1_8sabq")
+stretch_mode = 4

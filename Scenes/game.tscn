@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dnetqinjivtkh"]
+[gd_scene load_steps=16 format=3 uid="uid://dnetqinjivtkh"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_3o2j3"]
 [ext_resource type="PackedScene" uid="uid://dm3nkg01u0vhx" path="res://Scenes/player.tscn" id="1_aybw4"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://clhdpmwnbr8e8" path="res://Scenes/killzone.tscn" id="5_mr14h"]
 [ext_resource type="PackedScene" uid="uid://brnng3xmxp6u5" path="res://Scenes/slime.tscn" id="6_oewlg"]
 [ext_resource type="FontFile" uid="uid://v06qa2ngfwcw" path="res://assets/fonts/PixelOperator8.ttf" id="7_67hae"]
+[ext_resource type="PackedScene" uid="uid://llxpoo5mbga1" path="res://Scenes/hud.tscn" id="9_7xj4h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c2rog"]
 texture = ExtResource("2_2a7rv")
@@ -442,6 +443,13 @@ distance = 16.0
 
 [node name="Game" type="Node2D"]
 position = Vector2(1, 1)
+
+[node name="HUD" parent="." instance=ExtResource("9_7xj4h")]
+unique_name_in_owner = true
+offset_left = 257.0
+offset_top = 26.0
+offset_right = 257.0
+offset_bottom = 26.0
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
