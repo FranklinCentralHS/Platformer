@@ -278,7 +278,6 @@ libraries = {
 autoplay = "move"
 
 [node name="Music" parent="." instance=ExtResource("8_p7tbv")]
-bus = &"Master"
 
 [node name="Slimes" type="Node" parent="."]
 
