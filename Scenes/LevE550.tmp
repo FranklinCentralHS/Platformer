@@ -1,6 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://bkq4e5r0warcg"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_tscqi"]
+[ext_resource type="FontFile" uid="uid://cc3rn5io0q47q" path="res://Assets/fonts/PixelOperator8.ttf" id="2_84i3u"]
 [ext_resource type="Texture2D" uid="uid://njh47cs0c67w" path="res://Assets/sprites/world_tileset.png" id="3_c56m1"]
 [ext_resource type="PackedScene" uid="uid://bihiosntpc1l3" path="res://Scenes/player.tscn" id="4_bmdlo"]
 [ext_resource type="PackedScene" uid="uid://dhmgjse1rh7kj" path="res://Scenes/kill_zone.tscn" id="5_f3iuj"]
@@ -8,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://dkeq1o2bg4dld" path="res://Scenes/platform.tscn" id="7_s4cfy"]
 [ext_resource type="PackedScene" uid="uid://c67yj0msugwy6" path="res://Scenes/music.tscn" id="8_p7tbv"]
 [ext_resource type="PackedScene" uid="uid://pkkdor1qk8x1" path="res://Scenes/tropical_slime.tscn" id="9_bw0l1"]
-[ext_resource type="PackedScene" uid="uid://xa24crlpv41j" path="res://Scenes/hud.tscn" id="9_isd3x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ljfjh"]
 texture = ExtResource("3_c56m1")
@@ -458,6 +458,14 @@ _data = {
 unique_name_in_owner = true
 script = ExtResource("1_tscqi")
 
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+offset_left = 582.0
+offset_top = -129.0
+offset_right = 784.0
+offset_bottom = -106.0
+theme_override_fonts/font = ExtResource("2_84i3u")
+text = "Current Coins: x"
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_mcodl")
 format = 2
@@ -516,5 +524,3 @@ position = Vector2(214, 20)
 
 [node name="Tropical Slime2" parent="Slimes" instance=ExtResource("9_bw0l1")]
 position = Vector2(138, 52)
-
-[node name="HUD" parent="." instance=ExtResource("9_isd3x")]
