@@ -1,13 +1,66 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu0wwpmv052us"]
+[gd_scene load_steps=8 format=3 uid="uid://cu0wwpmv052us"]
 
 [ext_resource type="Script" path="res://scrips/Camera2D.gd" id="1_jtb1u"]
+[ext_resource type="Texture2D" uid="uid://cfjqyrsq6n2yw" path="res://assets/sprites/hearts.png" id="2_f0yki"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uyqn"]
+atlas = ExtResource("2_f0yki")
+region = Rect2(0, 96, 116, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5esl"]
+atlas = ExtResource("2_f0yki")
+region = Rect2(0, 64, 116, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kte64"]
+atlas = ExtResource("2_f0yki")
+region = Rect2(0, 32, 116, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cl8e"]
+atlas = ExtResource("2_f0yki")
+region = Rect2(0, 0, 116, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6enmo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uyqn")
+}],
+"loop": true,
+"name": &"hearts0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5esl")
+}],
+"loop": true,
+"name": &"hearts1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kte64")
+}],
+"loop": true,
+"name": &"hearts2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cl8e")
+}],
+"loop": true,
+"name": &"hearts3",
+"speed": 5.0
+}]
 
 [node name="MultTargetCam" type="Camera2D"]
+top_level = true
 script = ExtResource("1_jtb1u")
 
-[node name="Lives" type="Label" parent="."]
-offset_left = -214.0
-offset_top = -117.0
-offset_right = 49.0
-offset_bottom = 37.0
-text = "Lives: 3"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-168.484, -100.375)
+scale = Vector2(0.773438, 0.773438)
+sprite_frames = SubResource("SpriteFrames_6enmo")
+animation = &"hearts2"
+autoplay = "hearts3"

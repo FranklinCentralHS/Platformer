@@ -1,4 +1,5 @@
 extends Camera2D
+@onready var animated_sprite = $AnimatedSprite2D
 
 @export var move_speed = 0.5
 @export var zoom_speed = 0.05
@@ -46,5 +47,13 @@ func _process(delta):
 	if r.size.x > r.size.y * screen_size.aspect():
 		z = clamp(r.size.x / screen_size.y,min_zoom,max_zoom)
 		zoom = lerp(zoom, Vector2.ONE * z, zoom_speed)
-	livesDisplay.text = str(playerVariables.lives) 
+	
+	if playerVariables.lives == 3:
+		animated_sprite.play("hearts3")
+	elif playerVariables.lives == 2:
+		animated_sprite.play("hearts2")
+	elif playerVariables.lives == 1:
+		animated_sprite.play("hearts1")
+	elif playerVariables.lives == 0:
+		animated_sprite.play("hearts0")
 	pass

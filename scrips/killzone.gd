@@ -9,6 +9,7 @@ extends Area2D
 
 func _on_body_entered(body):
 	print("You got damaged")
+	playerVariables.damage = true
 	playerVariables.lives = playerVariables.lives-1
 	print(playerVariables.lives)
 	
