@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ctjqncagdhkn5"]
+[gd_scene load_steps=22 format=3 uid="uid://ctjqncagdhkn5"]
 
 [ext_resource type="Script" path="res://scrips/game_manager.gd" id="1_bogdl"]
 [ext_resource type="PackedScene" uid="uid://dpllm1n40f7hx" path="res://scenes/player1.tscn" id="1_uecsp"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://csygc8clcxfht" path="res://scenes/slime_enemy.tscn" id="6_r3vi1"]
 [ext_resource type="FontFile" uid="uid://cr8ceqx561v6" path="res://assets/fonts/PixelOperator8.ttf" id="7_vjvxo"]
 [ext_resource type="PackedScene" uid="uid://cu0wwpmv052us" path="res://scenes/mult_target_cam.tscn" id="10_u7u68"]
+[ext_resource type="Script" path="res://scrips/playerVariables.gd" id="11_smiom"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dvwu"]
 texture = ExtResource("1_xn1b5")
@@ -502,6 +503,9 @@ _data = {
 
 [node name="Game" type="Node2D"]
 
+[node name="MultTargetCam" parent="." instance=ExtResource("10_u7u68")]
+unique_name_in_owner = true
+
 [node name="Players" type="Node" parent="."]
 
 [node name="player1" parent="Players" instance=ExtResource("1_uecsp")]
@@ -515,16 +519,6 @@ position = Vector2(41, -17)
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_bogdl")
-
-[node name="ScoreLabel" type="Label" parent="GameManager"]
-offset_left = 202.0
-offset_top = 100.0
-offset_right = 404.0
-offset_bottom = 117.0
-scale = Vector2(1.02823, 1.42928)
-theme_override_fonts/font = ExtResource("7_vjvxo")
-theme_override_font_sizes/font_size = 16
-text = "You have X coins"
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_fqgqe")
@@ -595,9 +589,6 @@ theme_override_fonts/font = ExtResource("7_vjvxo")
 theme_override_font_sizes/font_size = 16
 text = "Space to Jump"
 
-[node name="MultTargetCam" parent="." instance=ExtResource("10_u7u68")]
-unique_name_in_owner = true
-
 [node name="coin" parent="." instance=ExtResource("4_lar1m")]
 position = Vector2(246, -138)
 
@@ -609,3 +600,6 @@ position = Vector2(194, -139)
 
 [node name="coin4" parent="." instance=ExtResource("4_lar1m")]
 position = Vector2(143, -139)
+
+[node name="playerVariables" type="Node" parent="."]
+script = ExtResource("11_smiom")
