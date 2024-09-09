@@ -85,8 +85,8 @@ tracks/5/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_hhe6s"]
-resource_name = "Vis_Start"
+[sub_resource type="Animation" id="Animation_cjd8r"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -100,6 +100,8 @@ tracks/0/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_hhe6s"]
+resource_name = "Vis_Start"
 [sub_resource type="Animation" id="Animation_sthgn"]
 resource_name = "ShowPauseMenu"
 tracks/0/type = "value"
