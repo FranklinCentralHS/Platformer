@@ -226,9 +226,8 @@ script = ExtResource("1_ah85a")
 position = Vector2(0, 9.53674e-07)
 scale = Vector2(1.5, 1.3125)
 sprite_frames = SubResource("SpriteFrames_4awjy")
-animation = &"crouch"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.589109
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)

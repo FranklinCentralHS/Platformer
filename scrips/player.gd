@@ -32,14 +32,18 @@ func _physics_process(delta):
 		
 	# Play animations
 	if is_on_floor():
-		if Input.is_action_just_pressed("p1crouch"):
-			animated_sprite.play("crouch")
-		elif direction == 0:
-			animated_sprite.play("idle")
-		else:
-			animated_sprite.play("run")
+			if Input.is_action_pressed("p1crouch"):
+				animated_sprite.play("crouch")
+			elif direction == 0:
+				animated_sprite.play("idle")
+			else:
+				animated_sprite.play("run")
 	else:
-		animated_sprite.play("jump")
+			animated_sprite.play("jump")
+		
+	if Input.is_action_pressed("p1crouch") and Input.is_action_just_pressed("p1jump") :
+		velocity.y = JUMP_VELOCITY -50
+		pass
 		
 	#apply movement
 	if direction:
