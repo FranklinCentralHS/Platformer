@@ -55,7 +55,7 @@ autoplay = "default"
 frame_progress = 0.83335
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, -1)
+position = Vector2(0, -3)
 shape = SubResource("CapsuleShape2D_l5awg")
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

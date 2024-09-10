@@ -531,6 +531,6 @@ scale = Vector2(0.25, 0.25)
 skew = -0.0314159
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="portal"]
-position = Vector2(12.3771, -12.0059)
+position = Vector2(0.377111, -12.0059)
 shape = SubResource("CapsuleShape2D_ifs1g")
 disabled = true
