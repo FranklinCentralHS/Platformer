@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cqyeg6fvvnh06"]
 
 [ext_resource type="Texture2D" uid="uid://bmd1fjxinag2a" path="res://assets/sprites/platforms.png" id="1_0c664"]
-[ext_resource type="Script" path="res://Scenes/dplatform.gd" id="1_fe7vk"]
+[ext_resource type="Script" path="res://scripts/dplatform.gd" id="1_3v2ab"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ajg8u"]
 atlas = ExtResource("1_0c664")
@@ -25,7 +25,7 @@ size = Vector2(34, 10)
 size = Vector2(30, 10)
 
 [node name="dplatform" type="StaticBody2D"]
-script = ExtResource("1_fe7vk")
+script = ExtResource("1_3v2ab")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t0f2w")
