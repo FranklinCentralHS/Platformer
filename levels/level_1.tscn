@@ -1,3 +1,4 @@
+<<<<<<<< HEAD:levels/level_1.tscn
 [gd_scene load_steps=17 format=3 uid="uid://dnetqinjivtkh"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_6w1o1"]
@@ -13,6 +14,23 @@
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c2rog"]
 texture = ExtResource("4_8ctcd")
+========
+[gd_scene load_steps=18 format=3 uid="uid://b4op4k55iu8bk"]
+
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_005g6"]
+[ext_resource type="FontFile" uid="uid://v06qa2ngfwcw" path="res://assets/fonts/PixelOperator8.ttf" id="2_rpg2j"]
+[ext_resource type="PackedScene" uid="uid://dm3nkg01u0vhx" path="res://Scenes/player.tscn" id="3_f0iio"]
+[ext_resource type="Texture2D" uid="uid://bha230vew0nx8" path="res://assets/sprites/world_tileset.png" id="4_unbfg"]
+[ext_resource type="PackedScene" uid="uid://bsx85j4i0qnt1" path="res://Scenes/platform.tscn" id="5_l2t5b"]
+[ext_resource type="PackedScene" uid="uid://clhdpmwnbr8e8" path="res://Scenes/killzone.tscn" id="6_daym2"]
+[ext_resource type="PackedScene" uid="uid://dn41qrif40mkw" path="res://Scenes/coin.tscn" id="7_it012"]
+[ext_resource type="PackedScene" uid="uid://brnng3xmxp6u5" path="res://Scenes/slime.tscn" id="8_ex28c"]
+[ext_resource type="PackedScene" uid="uid://cqyeg6fvvnh06" path="res://Scenes/dplatform.tscn" id="9_imukb"]
+[ext_resource type="PackedScene" uid="uid://bugo2sdp3ap0n" path="res://Scenes/portal.tscn" id="10_534hl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c2rog"]
+texture = ExtResource("4_unbfg")
+>>>>>>>> c5627c7024ab78fe6006191c98d0c5ebcf40bc1a:levels/level_2.tscn
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -442,11 +460,15 @@ _data = {
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0jay7"]
 distance = 16.0
 
-[node name="Game" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ifs1g"]
+height = 136.067
+
+[node name="level_2" type="Node2D"]
 position = Vector2(1, 1)
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
+<<<<<<<< HEAD:levels/level_1.tscn
 script = ExtResource("1_6w1o1")
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
@@ -456,13 +478,29 @@ offset_top = -151.0
 offset_right = 386.0
 offset_bottom = -128.0
 theme_override_fonts/font = ExtResource("2_et1x0")
+========
+script = ExtResource("1_005g6")
+
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 274.0
+offset_top = -115.0
+offset_right = 388.0
+offset_bottom = -92.0
+theme_override_fonts/font = ExtResource("2_rpg2j")
+>>>>>>>> c5627c7024ab78fe6006191c98d0c5ebcf40bc1a:levels/level_2.tscn
 theme_override_font_sizes/font_size = 8
 text = "You collected X coins"
 horizontal_alignment = 1
 autowrap_mode = 2
 
+<<<<<<<< HEAD:levels/level_1.tscn
 [node name="player" parent="." instance=ExtResource("3_v7uox")]
 position = Vector2(252, -77)
+========
+[node name="player" parent="." instance=ExtResource("3_f0iio")]
+position = Vector2(29, -19)
+>>>>>>>> c5627c7024ab78fe6006191c98d0c5ebcf40bc1a:levels/level_2.tscn
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(11, -5)
@@ -479,7 +517,11 @@ layer_0/tile_data = PackedInt32Array(262130, 1, 14, 327666, 1, 15, 262131, 1, 14
 layer_1/name = "Mid"
 layer_1/tile_data = PackedInt32Array(196599, 1, 0, 196600, 1, 0, 196601, 1, 0, 196602, 1, 0, 196603, 1, 0, 196604, 1, 0, 196605, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 1, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 262135, 1, 1, 262136, 65537, 0, 262137, 65537, 1, 262138, 65537, 0, 262139, 65537, 0, 262140, 1, 1, 262141, 65537, 0, 262142, 65537, 0, 262143, 65537, 0, 196608, 1, 1, 196609, 65537, 0, 196610, 65537, 0, 196611, 65537, 1, 196612, 65537, 0, 196613, 65537, 0, 196614, 65537, 0, 196615, 1, 1, 196616, 65537, 1, 262152, 65537, 0, 262151, 1, 1, 262150, 65537, 0, 262149, 65537, 1, 262148, 65537, 0, 262147, 65537, 0, 262146, 1, 1, 262145, 65537, 0, 262144, 65537, 0, 327679, 65537, 1, 327678, 65537, 0, 327675, 65537, 0, 327674, 65537, 1, 327673, 1, 1, 327672, 65537, 0, 327671, 65537, 0, 327676, 65537, 0, 327677, 65537, 0, 2, 65537, 0, 65538, 65537, 0, -65534, 1, 0, -65533, 1, 0, 3, 65537, 1, 65539, 65537, 0, -196602, 65537, 0, -196603, 65537, 0, -131067, 65537, 0, -131066, 65537, 0, -262138, 1, 0, -262139, 1, 0, -262130, 393217, 0, -262129, 393217, 0, -196595, 524289, 0, -196594, 393217, 1, -131058, 524289, 0, -131057, 393217, 1, -196593, 524289, 0, -131059, 524289, 0, 131065, 196609, 8, 65529, 196609, 8, -7, 196609, 8, -131079, 131073, 4, -5, 131073, 4, 131067, 196609, 7, -65528, 1, 3, 8, 1, 4, 65544, 1, 5, 131081, 1, 0, 196617, 65537, 1, 262153, 65537, 0, -262131, 393217, 0, -262125, 393217, 0, -196589, 524289, 0, -131053, 524289, 0, -262124, 393217, 0, -196588, 393217, 1, -131052, 524289, 0, -262123, 393217, 0, -196587, 524289, 0, -131051, 393217, 1, -327666, 524289, 4, 131082, 1, 0, 196618, 1, 1, 262154, 1, 1, 131083, 1, 0, 196619, 65537, 1, 262155, 65537, 0, 131084, 1, 0, 196620, 65537, 1, 262156, 65537, 0, 13, 524289, 1, -65521, 524289, 0, 15, 524289, 1, 131085, 524289, 1, 65551, 393217, 1, 131087, 524289, 1, 262157, 393217, 1, 196623, 393217, 1, 262159, 524289, 1, 65549, 393217, 1, -65522, 393217, 1, 196622, 524289, 1, 262158, 524289, 0, 196621, 524289, 0, 131086, 524289, 0, 14, 524289, 0, -65523, 524289, 0, 65550, 524289, 0)
 
+<<<<<<<< HEAD:levels/level_1.tscn
 [node name="platform" parent="." instance=ExtResource("5_lb0v6")]
+========
+[node name="platform" parent="." instance=ExtResource("5_l2t5b")]
+>>>>>>>> c5627c7024ab78fe6006191c98d0c5ebcf40bc1a:levels/level_2.tscn
 position = Vector2(128, -59)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platform"]
@@ -488,7 +530,11 @@ libraries = {
 }
 autoplay = "move"
 
+<<<<<<<< HEAD:levels/level_1.tscn
 [node name="Killzone" parent="." instance=ExtResource("6_uiovo")]
+========
+[node name="Killzone" parent="." instance=ExtResource("6_daym2")]
+>>>>>>>> c5627c7024ab78fe6006191c98d0c5ebcf40bc1a:levels/level_2.tscn
 position = Vector2(-109, 108)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
@@ -496,6 +542,7 @@ shape = SubResource("WorldBoundaryShape2D_0jay7")
 
 [node name="coins" type="Node" parent="."]
 
+<<<<<<<< HEAD:levels/level_1.tscn
 [node name="coin" parent="coins" instance=ExtResource("7_vsct4")]
 position = Vector2(216, -70)
 
@@ -507,10 +554,24 @@ position = Vector2(250, -70)
 
 [node name="Slime" parent="." instance=ExtResource("8_fx2hp")]
 position = Vector2(104, 21)
+========
+[node name="coin" parent="coins" instance=ExtResource("7_it012")]
+position = Vector2(216, -70)
+
+[node name="coin2" parent="coins" instance=ExtResource("7_it012")]
+position = Vector2(172, 22)
+
+[node name="coin3" parent="coins" instance=ExtResource("7_it012")]
+position = Vector2(250, -70)
+
+[node name="Node2D" parent="." instance=ExtResource("8_ex28c")]
+position = Vector2(104, 20)
+>>>>>>>> c5627c7024ab78fe6006191c98d0c5ebcf40bc1a:levels/level_2.tscn
 
 [node name="Labels" type="Node" parent="."]
 
 [node name="Label" type="Label" parent="Labels"]
+<<<<<<<< HEAD:levels/level_1.tscn
 offset_left = -58.0
 offset_top = -41.0
 offset_right = 56.0
@@ -525,3 +586,25 @@ position = Vector2(-37, 9)
 [node name="portal" parent="." instance=ExtResource("10_q8lmh")]
 position = Vector2(328, -95)
 scale = Vector2(0.2, 0.2)
+========
+offset_left = -63.0
+offset_top = -55.0
+offset_right = 51.0
+offset_bottom = -32.0
+theme_override_fonts/font = ExtResource("2_rpg2j")
+theme_override_font_sizes/font_size = 8
+text = "Space to jump."
+
+[node name="DisappearingPlatform" parent="." instance=ExtResource("9_imukb")]
+position = Vector2(-35, -33)
+
+[node name="portal" parent="." instance=ExtResource("10_534hl")]
+position = Vector2(328, -76)
+scale = Vector2(0.25, 0.25)
+skew = -0.0314159
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="portal"]
+position = Vector2(12.3771, -12.0059)
+shape = SubResource("CapsuleShape2D_ifs1g")
+disabled = true
+>>>>>>>> c5627c7024ab78fe6006191c98d0c5ebcf40bc1a:levels/level_2.tscn
