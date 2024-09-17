@@ -2,11 +2,11 @@
 insert description here
 
 
-## Team Members
-### fchsLemke - Mr. Lemke
+## Team Members 
+### fchsLemke - Mr. Lemke. IsThisShadow - Tayvion Jones
 set up repo with readme, git config, and empty project files
 ### [Now add each collaborator the same way]
-* [and their contributions]
+* Just me
 * [using this format if you want bullets]
 
 
