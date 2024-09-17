@@ -17,3 +17,7 @@ func _process(delta):
 		animated_sprite.flip_h = false
 
 	position.x += SPEED * direction * delta
+pass
+func _on_Top_body_entered(body):
+	if body.get_name() == "player":
+		queue_free()
