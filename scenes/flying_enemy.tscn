@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://bsnjpj6osd2g2"]
+
+[ext_resource type="Script" path="res://scripts/FlyingEnemy.gd" id="1_008wn"]
+[ext_resource type="Texture2D" uid="uid://k87yh5jququp" path="res://assets/sprites/slime_purple.png" id="2_s0l4l"]
+[ext_resource type="PackedScene" uid="uid://bw7gf2mydnno6" path="res://scenes/killzone.tscn" id="3_drh8i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymljv"]
+atlas = ExtResource("2_s0l4l")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sewhl"]
+atlas = ExtResource("2_s0l4l")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrrjn"]
+atlas = ExtResource("2_s0l4l")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sers"]
+atlas = ExtResource("2_s0l4l")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x0pnd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymljv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sewhl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrrjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sers")
+}],
+"loop": true,
+"name": &"Flight",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwv5q"]
+size = Vector2(18, 15)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pymtd"]
+radius = 8.0
+
+[node name="FlyingEnemy" type="CharacterBody2D"]
+script = ExtResource("1_008wn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_x0pnd")
+animation = &"Flight"
+autoplay = "Flight"
+frame_progress = 0.191043
+flip_h = true
+
+[node name="Killzone" parent="." instance=ExtResource("3_drh8i")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(1, -7)
+shape = SubResource("RectangleShape2D_vwv5q")
+
+[node name="RayCastDown" type="RayCast2D" parent="."]
+position = Vector2(1, -7)
+target_position = Vector2(-1, 14)
+
+[node name="RayCastUp" type="RayCast2D" parent="."]
+position = Vector2(1, -7)
+target_position = Vector2(0, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_pymtd")
