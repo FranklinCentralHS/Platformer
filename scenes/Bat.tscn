@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://dc3g26nir8y4i"]
+
+[ext_resource type="Script" path="res://scripts/Bat.gd" id="1_mvubf"]
+[ext_resource type="Texture2D" uid="uid://dv0lyi5bpgmd1" path="res://assets/Flight.png" id="2_7imos"]
+[ext_resource type="PackedScene" uid="uid://c7wt3bq3rdl65" path="res://scenes/killzone.tscn" id="3_74r7n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkp05"]
+atlas = ExtResource("2_7imos")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbi64"]
+atlas = ExtResource("2_7imos")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34rmm"]
+atlas = ExtResource("2_7imos")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3il20"]
+atlas = ExtResource("2_7imos")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6eloq"]
+atlas = ExtResource("2_7imos")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2juj"]
+atlas = ExtResource("2_7imos")
+region = Rect2(750, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g04bo"]
+atlas = ExtResource("2_7imos")
+region = Rect2(900, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltufg"]
+atlas = ExtResource("2_7imos")
+region = Rect2(1050, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_myjhc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkp05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbi64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34rmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3il20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6eloq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2juj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g04bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltufg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 11.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05dhc"]
+size = Vector2(10, 13.5)
+
+[node name="Bat" type="Node2D"]
+script = ExtResource("1_mvubf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, -8)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_myjhc")
+autoplay = "default"
+frame = 3
+frame_progress = 0.304864
+
+[node name="Killzone" parent="." instance=ExtResource("3_74r7n")]
+position = Vector2(0, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("RectangleShape2D_05dhc")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, -7)
+target_position = Vector2(9, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -7)
+target_position = Vector2(-9, 0)
