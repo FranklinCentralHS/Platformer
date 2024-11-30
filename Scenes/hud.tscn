@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://br8fmnlt56t58"]
+
+[ext_resource type="FontFile" uid="uid://cmiykypbawxdc" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_6e4gh"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_gwl8i"]
+[ext_resource type="Texture2D" uid="uid://bg2q7ibn2aeg" path="res://assets/sprites/coin.png" id="2_uwvy5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glpku"]
+atlas = ExtResource("2_uwvy5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dynq7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glpku")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="hud" type="CanvasLayer"]
+script = ExtResource("1_gwl8i")
+
+[node name="label" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 11.0
+offset_right = 133.0
+offset_bottom = 65.0
+theme_override_fonts/font = ExtResource("1_6e4gh")
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(40.5, 36.5)
+scale = Vector2(4.0625, 4.0625)
+sprite_frames = SubResource("SpriteFrames_dynq7")

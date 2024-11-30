@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://dpk5x372al3pm"]
+
+[ext_resource type="Texture2D" uid="uid://41f4scx7n1yq" path="res://assets/sprites/portal.png" id="1_jd41x"]
+
+[sub_resource type="GDScript" id="GDScript_vglkb"]
+script/source = "extends Area2D
+
+func _on_body_entered(body):
+	var current_scene_file = get_tree().current_scene.scene_file_path
+	var next_level_number = current_scene_file.to_int() + 1
+	var next_level_file = \"res://levels/level_\" + str(next_level_number) + \".tscn\"
+	get_tree().change_scene_to_file(next_level_file)
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afdns"]
+atlas = ExtResource("1_jd41x")
+region = Rect2(0, 0, 250, 592)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6egho"]
+atlas = ExtResource("1_jd41x")
+region = Rect2(250, 0, 250, 592)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttccu"]
+atlas = ExtResource("1_jd41x")
+region = Rect2(500, 0, 250, 592)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkksm"]
+atlas = ExtResource("1_jd41x")
+region = Rect2(750, 0, 250, 592)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pee5q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afdns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6egho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttccu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkksm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l5awg"]
+radius = 17.0
+height = 236.0
+
+[node name="portal" type="Area2D"]
+collision_mask = 2
+script = SubResource("GDScript_vglkb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.8147e-06, 0)
+scale = Vector2(0.472603, 0.56)
+sprite_frames = SubResource("SpriteFrames_pee5q")
+autoplay = "default"
+frame_progress = 0.35814
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, -32)
+shape = SubResource("CapsuleShape2D_l5awg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

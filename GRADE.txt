@@ -1,0 +1,23 @@
+Team Points:
+  20/20 points for a working platformer with a filled out README
+  16/20 points for having enough sizable changes (4 changes if in a group of 1, 5 changes if in a group of 2, 6 changes if in a group of 3, 8 changes if in a group of 4)
+  -only counting 4 out of 5
+  7/10 points for following the PR process correctly, including reviewing your teammates’ code (not required for solo projects, instead points will come from having enough changes)
+  -PR's were looked at by other members, but many changes were put directly into main
+
+43/50
+
+Individual Points:
+  10 points for contributing features to your game (no hard carries)
+  -10/10 Owen
+  -5/10 Logan - would have liked to see more technical changes and not just levels
+  -6/10 Payton - double jump is great, would've just liked to see more
+  5/5 points for thoughtful reflection added in the README
+  5 points for contributing to code reviews in PR’s (not required for solo projects, instead points will come from your reflection)
+  -3/5 Owen - not sure if you meant to close Logan's PR or not
+  -5/5 Logan
+  -0/5 Payton
+
+Owen	61/70
+Logan	58/70
+Payton	54/70

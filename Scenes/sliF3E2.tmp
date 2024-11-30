@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://brnng3xmxp6u5"]
+
+[ext_resource type="Texture2D" uid="uid://bmhfqwvhtaj44" path="res://assets/sprites/slime_green.png" id="1_4nof6"]
+[ext_resource type="Script" path="res://scripts/slime.gd" id="1_bu46d"]
+[ext_resource type="PackedScene" uid="uid://clhdpmwnbr8e8" path="res://Scenes/killzone.tscn" id="2_8wura"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yp0w3"]
+atlas = ExtResource("1_4nof6")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exfra"]
+atlas = ExtResource("1_4nof6")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wy34u"]
+atlas = ExtResource("1_4nof6")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwovh"]
+atlas = ExtResource("1_4nof6")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vv6l0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yp0w3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exfra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wy34u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwovh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgp7g"]
+size = Vector2(14, 12)
+
+[node name="slime" type="Node2D"]
+script = ExtResource("1_bu46d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vv6l0")
+autoplay = "default"
+
+[node name="Killzone" parent="." instance=ExtResource("2_8wura")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_dgp7g")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1, 5)
+target_position = Vector2(10, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 5)
+target_position = Vector2(-12, 0)
