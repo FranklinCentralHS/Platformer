@@ -1,15 +1,14 @@
 # Platformer Project
-insert description here
+Knight platformer with multiple different enemies and collectibles
 
 
 ## Team Members
 ### fchsLemke - Mr. Lemke
 set up repo with readme, git config, and empty project files
-### [Now add each collaborator the same way]
-* [and their contributions]
-* [using this format if you want bullets]
+### [Ty Niemeier, Tristan Jones, Jameion Marks]
+* double jump, srpint feature, flying enemy, fruit collectible, level selector, crouch feature
+
 
 
 ## Reflections
-
-Your write up will go here
+We all learned a lot during this project.
