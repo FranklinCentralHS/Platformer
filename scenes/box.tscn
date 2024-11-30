@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://civqmjs6gcmor"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_hq4jc"]
+size = Vector2(10, 10)
+
+[node name="Box" type="StaticBody2D"]
+position = Vector2(0, 1)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("QuadMesh_hq4jc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://s0jhyf0knaxv"]
+
+[ext_resource type="Script" path="res://scenes/endscreen.gd" id="1_wmu0x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjb80"]
+bg_color = Color(0, 0.909155, 0.388216, 1)
+
+[node name="Panel" type="Panel"]
+offset_right = 1120.0
+offset_bottom = 503.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fjb80")
+script = ExtResource("1_wmu0x")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 126.0
+offset_right = 1366.0
+offset_bottom = 627.0
+theme_override_font_sizes/font_size = 145
+text = "You win!"
